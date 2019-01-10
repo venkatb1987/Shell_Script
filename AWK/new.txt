@@ -1,0 +1,45 @@
+git status|awk '{/Untracked/ print $0}' 
+git status|awk '{/Untracked/ print$0}' 
+git status|awk '/Untracked/ {print $0}' 
+git status|awk '/Untracked/ {print $#}' 
+git status|awk '/Untracked/ {print $1}' 
+man awk 
+awk {print $1} marks.txt 
+awk '{print $1}' marks.txt 
+awk END {print NR} marks.txt 
+awk END{print NR} marks.txt 
+awk END{printf NR} marks.txt 
+awk 'END{printf NR}' marks.txt 
+awk 'END{print NR}' marks.txt 
+awk -v t=0 '{t=t+$NF} END{print t}' 
+awk -v t=0 '{t=t+$NF} END{print t}' marks.txt 
+awk '{t=t+$NF} END{print t}' marks.txt 
+awk '{t=t+$4} END{print t}' marks.txt 
+awk '{print $(NF-1)}' 
+awk '{print $(NF-1)}' marks.txt 
+awk -F /'{print $(NF-1)}' marks.txt 
+awk -F / '{print $(NF-1)}' marks.txt 
+awk -F " " '{print $(NF-1)}' marks.txt 
+awk 'BEGIN {OFS=":"}{print $(NF-1)}' marks.txt 
+awk 'BEGIN {OFS=":"}{print $0}' marks.txt 
+awk 'BEGIN {OFS = ":"}{print $0}' marks.txt 
+awk 'BEGIN {OFS = :}{print $0}' marks.txt 
+awk 'BEGIN {OFS = ","}{print $0}' marks.txt 
+ll|awk 'BEGIN{OFS = ","}{print}' 
+ll|awk 'BEGIN {OFS = ","} {print}' 
+cat marks.txt |awk ' 
+cat marks.txt |awk ' 
+ls -l | awk '{s = ""; for (i = NF; i > 0; i--) s = s $i OFS; print s}' 
+history|grep awk 
+history|grep awk>awk_practice.txt 
+cat awk_practice.txt 
+cat awk_practice.txt |awk '{for (i=2;i<=NF;i++) print $i}'>my_awk.txt 
+cat my_awk.txt 
+cat awk_practice.txt 
+cat awk_practice.txt |awk '{for (i=2;i<=NF;i++) s=s $i OFS}END {print s}'>my_awk.txt 
+cat awk_practice.txt |awk '{for (i=2;i<=NF;i++) s=s $i OFS}END {print "s\n"}'>my_awk.txt 
+cat awk_practice.txt |awk '{for (i=2;i<=NF;i++) s=s $i OFS}END {print s"\n"}'>my_awk.txt 
+cat awk_practice.txt |awk '{for (i=2;i<=NF;i++) s=s $i OFS; print s}'>my_awk.txt 
+cat awk_practice.txt |awk '{s = ""; for (i=2;i<=NF;i++) s= s $i OFS; print s}'>my_awk.txt 
+history|grep awk|awk '{s="" for (i=2;i<=NF;i++) s=s $i OFS; print s}'>new.txt 
+history|grep awk|awk '{s=""; for (i=2;i<=NF;i++) s=s $i OFS; print s}'>new.txt 
